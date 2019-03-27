@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListMarvelTable.swift
 //  App-Marvel-Teste
 //
 //  Created by Yan Meneguelli on 23/03/19.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListMarvelController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+        
     }
 
-
 }
-
