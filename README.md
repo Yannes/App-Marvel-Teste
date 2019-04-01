@@ -2,7 +2,7 @@
 Marvel-API-Criaçao de um app para consumo da API 
 
 
-#Aplicação 
+# Aplicação 
 O app foi desenvolvido no intuito de fazer uma listagem/detlhe do consumo da Marvel API, atendendo os requisitos do User Stories
 Como foi sugerido a utilização de no maximo 3 pods, me permiti desenovler o app fazendo a utilizaçao de apenas um pod para 
 a criptografia da Hash, tentando ser o mais puro na linguagem possivel. 
@@ -19,7 +19,7 @@ que nao fique confuso.
 
 
 
-#Instruções para execução
+# Instruções para execução
 
 instalação/atualizaçao dos Pods
 
