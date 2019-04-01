@@ -21,7 +21,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentSize.height = 3000
-        view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 0.9648972603)
         
         return view
     }()
@@ -43,6 +43,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
     let characterLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 18.0)
         label.text = "Empty"
         return label
     }()
@@ -63,8 +64,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
         let label = UILabel()
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        label.text = "There is no description"
         label.numberOfLines = 0
-        label.text = "There is no Description"
         return label
     }()
         
@@ -148,7 +149,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        label.text = "There are no Description"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -165,7 +165,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        label.text = "There are no Description"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -182,7 +181,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        label.text = "There are no Description"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -570,8 +568,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
         
     }
     
-    
-    
    
     func chamadaApiComics(id:Int){
         ComicsApi().ComicsCallApi(id: id) { (APIComics) in
@@ -590,7 +586,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
                     self.NameComic1Label.text = "\(self.comicsResult[0].title):"
                     self.descriptionComic1Label.text  = self.comicsResult[0].description ?? ""
                     self.NameComic2Label.text = "\(self.comicsResult[1].title):"
-                    self.descriptionComic2Label.text  = self.comicsResult[2].description ?? ""
+                    self.descriptionComic2Label.text  = self.comicsResult[1].description ?? ""
                 }else if self.comicsResult.count == 1{
                     self.NameComic1Label.text = "\(self.comicsResult[0].title):"
                     self.descriptionComic1Label.text  = self.comicsResult[0].description ?? ""
@@ -630,7 +626,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate{
             }
         }
     }
-    
     
     
     func StoriesCallApi(id:Int){

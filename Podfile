@@ -8,6 +8,7 @@ target 'App-Marvel-Teste' do
   # Pods for App-Marvel-Teste
   pod 'CryptoSwift'
  
+ 
 
   target 'App-Marvel-TesteTests' do
     inherit! :search_paths

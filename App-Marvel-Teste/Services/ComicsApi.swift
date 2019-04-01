@@ -16,8 +16,6 @@ class ComicsApi: NSObject {
     let privateKey = "e0215c13b509a960ac2ec6a7e4beff46c0067049"
     let ts         = NSDate().timeIntervalSince1970.description
     
-    
-    
     func ComicsCallApi(id:Int,completion: @escaping(_ Sucesso: APIComics) ->()){
         
         let hash = "\(ts)\(privateKey)\(publicKey)".md5()
@@ -37,10 +35,6 @@ class ComicsApi: NSObject {
             }
             }.resume()
     }
-    
-    
-   
-    
 }
 
 

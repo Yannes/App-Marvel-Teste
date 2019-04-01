@@ -15,20 +15,20 @@ class ServerApi: NSObject {
     let publicKey  = "6d0586440891a03b22bdad697752fb2f"
     let privateKey = "e0215c13b509a960ac2ec6a7e4beff46c0067049"
     let ts         = NSDate().timeIntervalSince1970.description
+    let limit    = 20
     
     
+    func CallApi(offset:Int,completion: @escaping(_ Sucesso: MarvelApi) ->()){
     
-    func CallApi(limit:Int,offset:Int,completion: @escaping(_ Sucesso: MarvelApi) ->()){
-        
+        let offset1 = offset * limit
         let hash = "\(ts)\(privateKey)\(publicKey)".md5()
-        let urlString = "https://gateway.marvel.com:443/v1/public/characters?apikey=\(publicKey)&ts=\(ts)&hash=\(hash)&limit=\(limit)&offset=\(offset)"
+        let urlString = "https://gateway.marvel.com:443/v1/public/characters?apikey=\(publicKey)&ts=\(ts)&hash=\(hash)&limit=\(limit)&offset=\(offset1)"
         
         guard let url = URL(string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
             }
-            sleep(1)
             guard let data = data else{return}
             do {
                 let gitResponse = try JSONDecoder().decode(MarvelApi.self, from: data)

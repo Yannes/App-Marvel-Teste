@@ -20,8 +20,7 @@ class App_Marvel_TesteTests: XCTestCase {
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+  //  XCUIApplication().tables.cells.element(boundBy: 2).buttons["signup button"].tap()
     }
 
     func testPerformanceExample() {

@@ -36,6 +36,8 @@ struct ResultsComics:Decodable {
     let thumbnail:ThumbnailDetail
 }
 
+struct ResultsComicsLoading { }
+
 struct UrlDescription:Decodable {
     let type: String
     let url:  String
